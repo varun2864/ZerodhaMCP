@@ -1,33 +1,32 @@
-# ZerodhaMCP
-This project implements a minimal **Model Context Protocol (MCP) server** for **Zerodha Kite Connect**, allowing programmatic access to trading resources and operations. It provides a structured interface for retrieving account data, monitoring positions, and executing trades directly via MCP.  
+# Kite MCP Server (v3)  
+
+This project implements a lightweight **Model Context Protocol (MCP) server** for **Zerodha Kite Connect**. It exposes trading resources and tools through MCP, enabling structured access to portfolio data, positions, orders, quotes, and trading actions.  
 
 ## Features  
 - **Resource Access**  
-  - User Profile  
-  - Portfolio Holdings  
-  - Trading Positions  
-  - Order Book  
-  - Account Funds  
-  - Active GTT (Good Till Triggered) Orders  
+  - Portfolio (current holdings)  
+  - Positions (active positions)  
+  - Orders (order book)  
 
 - **Trading Tools**  
-  - Configure Kite Connect with API key and access token  
-  - Fetch real-time market quotes  
-  - Place new buy/sell orders  
-  - Modify existing orders  
-  - Cancel orders  
-  - Retrieve holdings and GTT orders  
+  - **configure** → Set API key and access token to connect Kite  
+  - **quote** → Fetch real-time market quotes for instruments  
+  - **place_order** → Place new buy/sell orders with custom parameters  
+  - **get_holdings** → Retrieve portfolio holdings  
+  - **get_gtt_orders** → Fetch active GTT (Good Till Triggered) orders  
 
-- **Server Integration**  
-  - Uses `asyncio` for non-blocking execution  
-  - Provides structured logs for actions and errors  
-  - Exposes resources and tools in a standardized MCP format  
+- **Asynchronous Server**  
+  - Uses `asyncio` for efficient, non-blocking operations  
+  - Executes Kite API calls in background threads for responsiveness  
 
 ## Example Workflow  
-1. **Configure Kite Connect** with your `api_key` and `access_token`.  
-2. **Fetch Resources** such as profile, portfolio, or funds.  
-3. **Get Quotes** for live instruments.  
-4. **Place Orders** (buy/sell) with parameters like symbol, exchange, quantity, and order type.  
-5. **Modify or Cancel Orders** as needed.  
-6. **View Active GTT Orders** to track conditional trades.  
+1. **Configure** → Provide your `api_key` and `access_token` to establish a connection.  
+2. **Fetch Resources** → Access portfolio, positions, or orders.  
+3. **Get Quotes** → Retrieve live quotes for instruments.  
+4. **Place Orders** → Submit buy/sell trades with required parameters.  
+5. **View Holdings & GTT Orders** → Monitor investments and conditional orders.  
 
+## Requirements  
+- Python 3.9+  
+- [`kiteconnect`](https://pypi.org/project/kiteconnect/) (`pip install kiteconnect`)  
+- [`mcp`](https://github.com/modelcontextprotocol)  
