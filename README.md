@@ -1,4 +1,4 @@
-# Kite MCP Server (v3)  
+# Kite MCP Server
 
 This project implements a lightweight **Model Context Protocol (MCP) server** for **Zerodha Kite Connect**. It exposes trading resources and tools through MCP, enabling structured access to portfolio data, positions, orders, quotes, and trading actions.  
 
